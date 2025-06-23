@@ -12,7 +12,7 @@ public class Q7_oneAway {
         boolean found=false;
         while(idx1<s1.length() && idx2<s2.length()){
             if(s1.charAt(idx1)!=s2.charAt(idx2)){
-                if(found) return false;
+                if(found) return false; // 2nd replacement found; not allowed return false then
                 found=true;
 
             if(s1.length()==s2.length()){
