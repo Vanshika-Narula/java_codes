@@ -5,12 +5,12 @@ public class Q10_set_matrix_zero {
         int m = matrix[0].length;
         boolean firstColZero = false;
 
-        for(int i=0; i<m; i++){
+        for(int i=0; i<n; i++){
             if(matrix[i][0]==0){
                 firstColZero=true;
             }
 
-            for(int j=1; j<n; j++){
+            for(int j=1; j<m; j++){
                 if(matrix[i][j]==0){
                     matrix[i][0]=0;
                     matrix[0][j]=0;
