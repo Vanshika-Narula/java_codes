@@ -1,4 +1,8 @@
 public class remove_duplicates_from_sorted_arr {
+//     The goal is to remove duplicates from a sorted array in-place and return the count of unique elements.
+// Note:
+// This algorithm modifies the array such that the first k elements are unique.
+// It returns the value k.
 
     public static int unique_elem(int[] arr){
         int n = arr.length;

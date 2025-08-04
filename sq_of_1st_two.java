@@ -2,6 +2,14 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class sq_of_1st_two {
+
+//     Objective of the Code
+// From the given string of digits:
+// Extract digits at odd indices (i.e., 1st, 3rd, 5th, etc. in 0-based indexing).
+// Remove duplicates while preserving order.
+// Square each digit.
+// Form a string from the squared values.
+// Finally, print the first 4 digits of this string.
     
     public static void main(String[] args) {
         String s = "5622381275";
