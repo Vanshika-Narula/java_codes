@@ -15,6 +15,8 @@ public class Q56_val_paranthesis {
             } else if (!st.isEmpty() && ch == ']' && st.peek() == '[') {
                 st.pop();
             }
+            else
+                return false;
         }
         return st.isEmpty();
     }
