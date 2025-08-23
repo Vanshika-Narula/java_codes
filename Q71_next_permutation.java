@@ -41,7 +41,7 @@ public class Q71_next_permutation {
         }
     }
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3 };
+        int[] arr = { 1, 1,5 };
         next_perm(arr);
         for(int i: arr)
             System.out.print(i+" ");
