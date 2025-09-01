@@ -1,5 +1,6 @@
 public class Q74_pow_x_n {
 
+    // leetcode 50
     public static double power(double x, int n) {
         long N = n;
         if (N < 0) {
