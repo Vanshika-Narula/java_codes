@@ -65,6 +65,8 @@ public class convertArr {
         System.out.println();
         int length = lengthLL(head);
         System.out.println(length);
+        head = insertAtHead(head, 1);
+        printLL(head);
         System.out.println();
     }
     
