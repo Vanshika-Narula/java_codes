@@ -60,16 +60,39 @@ public class convertArr {
 
     public static Node insertAtTail(Node head, int val) {
         Node newNode = new Node(val);
-        if(head==null)
+        if (head == null)
             return newNode;
-        
+
         Node temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
         temp.next = newNode;
         return head;
+    }
     
+    public static Node insertAtPos(Node head, int k, int val) {
+        if (head == null) {
+            if (k == 1)
+                return new Node(val, head);
+            else
+                return null;
+        }
+        if (k == 1) {
+            return new Node(val, head);
+        }
+        int cnt = 0;
+        Node temp = head;
+        while (temp != null) {
+            cnt++;
+            if (cnt == k - 1) {
+                Node x = new Node(val, temp.next);
+                temp.next = x;
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
     }
     
     public static void main(String[] args) {
@@ -85,7 +108,9 @@ public class convertArr {
         insertAtTail(head, 13);
         printLL(head);
         System.out.println();
-
+        insertAtPos(head, 5, 11);
+        printLL(head);
+        System.out.println();
     }
     
 }
