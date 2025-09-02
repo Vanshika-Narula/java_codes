@@ -57,6 +57,20 @@ public class convertArr {
         head = newNode;
         return head;
     }
+
+    public static Node insertAtTail(Node head, int val) {
+        Node newNode = new Node(val);
+        if(head==null)
+            return newNode;
+        
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        return head;
+    
+    }
     
     public static void main(String[] args) {
         int[] arr = { 2, 4, 6, 8, 10, 12 };
@@ -68,6 +82,10 @@ public class convertArr {
         head = insertAtHead(head, 1);
         printLL(head);
         System.out.println();
+        insertAtTail(head, 13);
+        printLL(head);
+        System.out.println();
+
     }
     
 }
