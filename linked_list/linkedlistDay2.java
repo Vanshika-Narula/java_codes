@@ -93,14 +93,32 @@ public class linkedlistDay2 {
     }
 
     public static Node removeTail(Node head) {
-        if(head==null || head.next==null)
+        if (head == null || head.next == null)
             return null;
         Node temp = head;
         while (temp.next.next != null) {
             temp = temp.next;
         }
         temp.next = null;
-        return head; 
+        return head;
+    }
+    
+    public static Node removeKthNode(Node head, int k){
+        if(head==null)
+            return null;
+        Node temp=head;
+        Node prev=null;
+        int cnt=0;
+        while(temp!=null){
+            cnt++;
+            if(cnt==k-1){
+                prev.next=prev.next.next;
+                break;
+            }
+            prev=temp;
+            temp=temp.next;
+        }
+        return head;
     }
     
     public static void main(String[] args) {
@@ -123,6 +141,8 @@ public class linkedlistDay2 {
         head = removeTail(head);
         printLL(head);
         System.out.println();
-
+        head = removeKthNode(head, 5);
+        printLL(head);
+        System.out.println();
     }
 }
