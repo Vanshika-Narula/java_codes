@@ -94,6 +94,13 @@ public class convertArr {
         }
         return head;
     }
+
+    public static Node removeHead(Node head) {
+        if(head==null || head.next==null)
+            return null;
+        head = head.next;
+        return head;
+    }
     
     public static void main(String[] args) {
         int[] arr = { 2, 4, 6, 8, 10, 12 };
@@ -109,6 +116,9 @@ public class convertArr {
         printLL(head);
         System.out.println();
         insertAtPos(head, 5, 11);
+        printLL(head);
+        System.out.println();
+        head = removeHead(head);
         printLL(head);
         System.out.println();
     }
