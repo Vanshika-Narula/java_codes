@@ -103,20 +103,36 @@ public class linkedlistDay2 {
         return head;
     }
     
-    public static Node removeKthNode(Node head, int k){
-        if(head==null)
+    public static Node removeKthNode(Node head, int k) {
+        if (head == null)
             return null;
-        Node temp=head;
-        Node prev=null;
-        int cnt=0;
-        while(temp!=null){
+        Node temp = head;
+        Node prev = null;
+        int cnt = 0;
+        while (temp != null) {
             cnt++;
-            if(cnt==k-1){
-                prev.next=prev.next.next;
+            if (cnt == k - 1) {
+                prev.next = prev.next.next;
                 break;
             }
-            prev=temp;
-            temp=temp.next;
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+    public static Node removeValue(Node head, int val) {
+        if(head==null)
+            return null;
+        Node temp = head;
+        Node prev = null;
+        while (temp != null) {
+            if (temp.data == val) {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
         }
         return head;
     }
@@ -142,6 +158,9 @@ public class linkedlistDay2 {
         printLL(head);
         System.out.println();
         head = removeKthNode(head, 5);
+        printLL(head);
+        System.out.println();
+        head = removeValue(head, 10);
         printLL(head);
         System.out.println();
     }
