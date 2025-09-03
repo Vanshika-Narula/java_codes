@@ -37,7 +37,7 @@ public class linkedlistDay2 {
         }
     }
     
-    public static Node insertAtHead(Node head, int val){
+    public static Node insertAtHead(Node head, int val) {
         if (head == null) {
             return new Node(val);
         }
@@ -46,6 +46,20 @@ public class linkedlistDay2 {
         head = newNode;
         return head;
     }
+    
+    public static Node insertAtTail(Node head, int val) {
+        Node newNode = new Node(val);
+        if (head == null) {
+            return newNode;
+        }
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        return head;
+
+    }
     public static void main(String[] args) {
         int[] arr = { 2, 4, 6, 8, 10, 12 };
         Node head = convertArr2LL(arr);
@@ -53,5 +67,9 @@ public class linkedlistDay2 {
         System.out.println();
         head = insertAtHead(head, 0);
         printLL(head);
+        System.out.println();
+        head = insertAtTail(head, 14);
+        printLL(head);
+
     }
 }
