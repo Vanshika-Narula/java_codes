@@ -84,6 +84,25 @@ public class linkedlistDay2 {
         }
         return head;
     }
+
+    public static Node removeHead(Node head) {
+        if(head==null)
+            return null;
+        head = head.next;
+        return head;
+    }
+
+    public static Node removeTail(Node head) {
+        if(head==null || head.next==null)
+            return null;
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head; 
+    }
+    
     public static void main(String[] args) {
         int[] arr = { 2, 4, 6, 8, 10, 12 };
         Node head = convertArr2LL(arr);
@@ -97,6 +116,13 @@ public class linkedlistDay2 {
         System.out.println();
         head = insertAtPos(head, 11, 5);
         printLL(head);
+        System.out.println();
+        head=removeHead(head);
+        printLL(head);
+        System.out.println();
+        head = removeTail(head);
+        printLL(head);
+        System.out.println();
 
     }
 }

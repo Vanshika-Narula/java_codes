@@ -96,11 +96,12 @@ public class convertArr {
     }
 
     public static Node removeHead(Node head) {
-        if(head==null || head.next==null)
+        if (head == null || head.next == null)
             return null;
         head = head.next;
         return head;
     }
+    
     
     public static void main(String[] args) {
         int[] arr = { 2, 4, 6, 8, 10, 12 };
