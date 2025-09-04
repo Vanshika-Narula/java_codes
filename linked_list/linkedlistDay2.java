@@ -138,7 +138,7 @@ public class linkedlistDay2 {
     }
 
     public static Node getKthFromEnd(Node head, int k) {
-        if(head==null || k==0)
+        if (head == null || k == 0)
             return null;
 
         Node slow = head;
@@ -153,36 +153,58 @@ public class linkedlistDay2 {
         return slow;
     }
     
+    public static Node getMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    
     public static void main(String[] args) {
         int[] arr = { 2, 4, 6, 8, 10, 12 };
         Node head = convertArr2LL(arr);
         printLL(head);
         System.out.println();
+
         head = insertAtHead(head, 0);
         printLL(head);
         System.out.println();
+
         head = insertAtTail(head, 14);
         printLL(head);
         System.out.println();
+
         head = insertAtPos(head, 11, 5);
         printLL(head);
         System.out.println();
+
         head=removeHead(head);
         printLL(head);
         System.out.println();
+
         head = removeTail(head);
         printLL(head);
         System.out.println();
+
         head = removeKthNode(head, 5);
         printLL(head);
         System.out.println();
+
         head = removeValue(head, 10);
         printLL(head);
         System.out.println();
+
         Node kth = getKthFromEnd(head, 2);
         if (kth != null) {
             System.out.print(kth.data + " ");
         }
+        System.out.println();
+        
+        Node mid = getMid(head);
+        System.out.println(mid.data + " ");
         System.out.println();
     }
 }
