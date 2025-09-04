@@ -122,7 +122,7 @@ public class linkedlistDay2 {
     }
 
     public static Node removeValue(Node head, int val) {
-        if(head==null)
+        if (head == null)
             return null;
         Node temp = head;
         Node prev = null;
@@ -135,6 +135,22 @@ public class linkedlistDay2 {
             temp = temp.next;
         }
         return head;
+    }
+
+    public static Node getKthFromEnd(Node head, int k) {
+        if(head==null || k==0)
+            return null;
+
+        Node slow = head;
+        Node fast = head;
+        for (int i = 1; i <= k; i++) {
+            fast = fast.next;
+        }
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
     }
     
     public static void main(String[] args) {
@@ -162,6 +178,11 @@ public class linkedlistDay2 {
         System.out.println();
         head = removeValue(head, 10);
         printLL(head);
+        System.out.println();
+        Node kth = getKthFromEnd(head, 2);
+        if (kth != null) {
+            System.out.print(kth.data + " ");
+        }
         System.out.println();
     }
 }
